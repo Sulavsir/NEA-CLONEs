@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Homepage!</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <style>
+    table,
+    td,
+    th {
+      border: 1px solid;
+      margin: 0.5rem 0 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 0.5rem 0;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <img src="/logo.png"alt="Logo of NEA" class="logo-img" />
+            
+            <div class="nav-btn">
+                <a href=#><button class="btn-primary" onclick="submit">HomePage</button></a>
+                <a href=#> <button class="btn-primary" onclick="submit"> Logout </button></a>
+            </div>
+        
+    </nav>
+  
+  <div class="content">
+    <div class="container">
+        <h1>Hello, User</h1>
+
+      <h3>Search Customer:</h3>
+      <form method="post" action="">
+        <div class="box">
+          <input type="text" name="name" id="name">
+          <span>Name</span>
+        </div>
+
+        <div class="box">
+          <input type="text" name="mobile" id="mobile">
+          <span>Mobile No</span>
+        </div>
+
+        <div class="box">
+          <input class="submit" type="submit" name="submit" value="Search" />
+        </div>
+
+
+      </form>
+      <hr>
+      <h1 style=margin:1rem 0;>Search Result</h1>
+
+            <table>
+              <tr>
+                <td><strong>Full Name:</strong></td>
+                <td>Ram Pandit</td>
+              </tr>
+              <tr>
+                <td><strong>Mobile No:</strong></td>
+                <td>9801100200</td>
+              </tr>
+              <tr>
+                <td><strong>Address:</strong></td>
+                <td>Balkot</td>
+              </tr>
+              <tr>
+                <td><strong>Demand Type:</strong></td>
+                <td> 10 AMP </td>
+              </tr>
+            </table>
+
+          <h2 style=margin:1rem 0;>Bill Details</h2>
+          <table border = '1' class = 'center'>
+            <tr>
+                <td> Bill Number</td>
+                <td> Bill Amount</td>
+                <td> Bill Date</td>
+                <td> Current Readings</td>
+                <td> Previous Readings</td>
+                <td> Payment status</td>
+            </tr>
+
+            <tr>
+            <td> 00123830 </td>
+            <td> 1820</td>
+            <td> 2024 </td> 
+            <td> 22340</td> 
+            <td> 22267</td> 
+            <td>
+            <a href="#">Pay</a>
+            
+            </td>
+
+            </tr>
+          
+          </table>
+    </div>
+  </div>
+  <footer>
+    <p>
+        Copyright © <span id="year-change"></span> Nepal Electricity Authority ❘
+        All Rights Reserved.
+    </p>
+    </footer>
+
+</body>
+
+</html>

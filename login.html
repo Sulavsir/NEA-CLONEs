@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <img src="/logo.png"alt="Logo of NEA" class="logo-img" />
+            
+            <div class="nav-btn">
+                <a href=#><button class="btn-primary" onclick="submit">HomePage</button></a>
+                <a href=#> <button class="btn-primary" onclick="submit"> Logout </button></a>
+            </div>
+        
+    </nav>
+
+    <form class="container" method="post">
+        <h1>Login</h1>
+
+        <div class="input-group box">
+            <input type="text" name="username">
+            <span>Username</span>
+        </div>
+        <div class="input-group box">
+
+            <input type="password" name="password">
+            <span>Password</span>
+
+        </div>
+        <div class="input-group box">
+            <button type="submit" class="btn submit" name="login_btn" id="button1">Login</button>
+        </div>
+        <p>
+            Not yet a member? <a href="register.html"> <span style="color:#0C6D9E; font-weight:600"> Sign up</span> </a>
+        </p>
+    </form>
+    <footer>
+        <p>
+            Copyright © <span id="year-change"></span> Nepal Electricity Authority ❘
+            All Rights Reserved.
+        </p>
+    </footer>
+    
+    <script>
+        const date = new Date();
+        if (date.getFullYear() > 2023) {
+            document.getElementById("year-change").innerHTML = date.getFullYear();
+        } else {
+            document.getElementById("year-change").innerHTML = 2023;
+        }
+
+        document.getElementById('button1').onclick = function() {
+            location.href = "http://127.0.0.1:5500/index.html";
+        }
+    </script>
+    
+</body>
+</html>

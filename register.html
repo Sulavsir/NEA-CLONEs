@@ -1,0 +1,49 @@
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="/logo.png"alt="Logo of NEA" class="logo-img" />
+            
+            <div class="nav-btn">
+                <a href=#><button class="btn-primary" onclick="submit">HomePage</button></a>
+                <a href=#> <button class="btn-primary" onclick="submit"> Logout </button></a>
+            </div>
+    </nav>
+    <form class="container" method="post">
+        <h1>Register</h1>
+
+        <div class="input-group box">
+            <input type="text" name="username" >
+            <span>Username</span>
+        </div>
+        <div class="input-group box">
+            <input type="email" name="email">
+            <span>Email</span>
+        </div>
+        <div class="input-group box">
+            <input type="password" name="password_1">
+            <span>Password</span>
+
+        </div>
+        <div class="input-group box">
+            <input type="password" name="password_2">
+            <span>Confirm Password</span>
+        </div>
+        <div class="input-group box">
+            <button type="submit" class="btn submit" name="register_btn">Register</button>
+        </div>
+        <p>
+            Already a member? <a href="login.html"><span style="color:#0C6D9E; font-weight:600"> Sign in</span> </a>
+        </p>
+    </form>
+
+    <footer>
+        <p>
+            Copyright © <span id="year-change"></span> Nepal Electricity Authority ❘
+            All Rights Reserved.
+        </p>
+    </footer>
+    
+
+</body>
