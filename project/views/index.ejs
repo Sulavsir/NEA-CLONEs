@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="/logo.png" alt="Logo of NEA" class="logo-img" />
+        <div class="nav-btn">
+            <a href="#"><button class="btn-primary" onclick="location.href='/'">HomePage</button></a>
+            <a href="#"><button class="btn-primary" onclick="location.href='/logout'">Logout</button></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome, <%= user %></h1>
+        <h2>Customer Details</h2>
+        <table class="customer-info">
+            <tr>
+                <td><strong>Full Name:</strong></td>
+                <td><%= customer.full_name %></td>
+            </tr>
+            <tr>
+                <td><strong>Mobile No:</strong></td>
+                <td><%= customer.mobile %></td>
+            </tr>
+            <tr>
+                <td><strong>Address:</strong></td>
+                <td><%= customer.address %></td>
+            </tr>
+            <tr>
+                <td><strong>Counter:</strong></td>
+                <td><%= customer.counter %></td>
+            </tr>
+            <tr>
+                <td><strong>Consumer ID:</strong></td>
+                <td><%= customer.consumer_id %></td>
+            </tr>
+            <tr>
+                <td><strong>SC.NO:</strong></td>
+                <td><%= customer.sc_no %></td>
+            </tr>
+            <tr>
+                <td><strong>Demand Type:</strong></td>
+                <td><%= customer.demand_type %></td>
+            </tr>
+        </table>
+
+        <h2>Bill Details</h2>
+        <% if (customer.bills.length > 0) { %>
+        <div class="bills-wrapper">
+            <table class="bills">
+                <thead>
+                    <tr>
+                        <th>Bill Number</th>
+                        <th>Bill Amount</th>
+                        <th>Bill Date</th>
+                        <th>Current Readings</th>
+                        <th>Previous Readings</th>
+                        <th>Payment Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% customer.bills.forEach(bill => { %>
+                        <tr>
+                            <td><%= bill.bill_number %></td>
+                            <td><%= bill.bill_amount %></td>
+                            <td><%= bill.bill_date %></td>
+                            <td><%= bill.current_readings %></td>
+                            <td><%= bill.previous_readings %></td>
+                            <td><%= bill.payment_status %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <% } else { %>
+        <p>No bills available.</p>
+        <% } %>
+
+        <!-- Payment Method Selection -->
+        <h2>Make Payment</h2>
+        <form action="/payment" method="POST">
+            <label for="payment-method">Payment Method:</label>
+            <select name="payment_method" id="payment-method" required>
+                <option value="" disabled selected>Select Payment Method</option>
+                <option value="esewa">eSewa</option>
+                <option value="khalti">Khalti</option>
+            </select>
+            <input type="hidden" name="bill_number" value="<%= customer.bills[0].bill_number %>">
+            <input type="hidden" name="bill_amount" value="<%= customer.bills[0].bill_amount %>">
+            <button type="submit" class="btn submit">Pay Now</button>
+        </form>
+    </div>
+</body>
+</html>

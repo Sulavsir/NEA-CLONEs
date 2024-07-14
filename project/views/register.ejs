@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="/logo.png" alt="Logo of NEA" class="logo-img" />
+        <div class="nav-btn">
+            <a href="#"><button class="btn-primary" onclick="location.href='/'">HomePage</button></a>
+            <a href="#"><button class="btn-primary" onclick="location.href='/logout'"> Logout </button></a>
+        </div>
+    </nav>
+
+    <form class="container" method="POST" action="/register">
+        <h1>Register</h1>
+        <div class="input-group box">
+            <input type="text" name="username" required>
+            <span>Username</span>
+        </div>
+        <div class="input-group box">
+            <input type="email" name="email" required>
+            <span>Email</span>
+        </div>
+        <div class="input-group box">
+            <input type="password" name="password_1" required>
+            <span>Password</span>
+        </div>
+        <div class="input-group box">
+            <input type="password" name="password_2" required>
+            <span>Confirm Password</span>
+        </div>
+        <div class="input-group box">
+            <input type="text" name="mobile" required>
+            <span>Mobile No</span>
+        </div>
+        <div class="input-group box">
+            <input type="text" name="address" required>
+            <span>Address</span>
+        </div>
+        <div class="input-group box">
+            <button type="submit" class="btn submit" name="register_btn">Register</button>
+        </div>
+    </form>
+    
+</body>
+</html>
